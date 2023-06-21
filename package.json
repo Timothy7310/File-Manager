@@ -1,0 +1,11 @@
+{
+  "name": "file-manager",
+  "version": "1.0.0",
+  "description": "Simple CLI file manager by using Node JS",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "author": "Timothy Popovskiy",
+  "license": "ISC"
+}
