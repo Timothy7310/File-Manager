@@ -2,9 +2,13 @@ import os from "os";
 import readline from "readline";
 import { stdin, stdout } from "process";
 
+// base functions
 import sayHello from "./helpers/sayHello.js";
 import sayBye from "./helpers/sayBye.js";
 import showCurrentPath from "./helpers/showCurrentPath.js";
+
+// commands manager
+import commandsManager from "./commandsManager.js";
 
 const start = () => {
   let [_, userName] = process.argv
@@ -30,9 +34,7 @@ const start = () => {
   }
 
   rl.on("line", (input) => {
-    if (input.toLowerCase() === ".exit") {
-      rl.close();
-    }
+    commandsManager(input, rl);
   });
 
   rl.on("close", () => {

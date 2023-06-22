@@ -1,5 +1,5 @@
 const sayHello = (name) => {
-  process.stdout.write(`Welcome to the File Manager, ${name}!\n`);
+  console.log(`Welcome to the File Manager, ${name}!`);
 };
 
 export default sayHello;

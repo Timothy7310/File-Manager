@@ -1,5 +1,7 @@
+import printMessage from "./printMessage.js";
+
 const showCurrentPath = (path) => {
-  process.stdout.write(`You are currently in ${path}\n\n`);
+  printMessage(`You are currently in ${path}`);
 };
 
 export default showCurrentPath;
