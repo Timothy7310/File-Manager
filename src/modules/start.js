@@ -32,6 +32,10 @@ const start = () => {
 
   rl.on("line", (input) => {
     commandsManager(input, rl);
+
+    if (!input.startsWith("cd ")) {
+      showCurrentPath(currentPath.getPath());
+    }
   });
 
   rl.on("close", () => {

@@ -1,5 +1,6 @@
 import manageOSCommands from "./operation-system/manageOSCommands.js";
 import manageNWDCommands from "./nwd/manageNWDCommands.js";
+import manageOWFcommands from "./operation-with-files/manageOWFcommands.js";
 
 const commandsManager = (input, readline, currentPath) => {
   if (input === ".exit") {
@@ -16,6 +17,18 @@ const commandsManager = (input, readline, currentPath) => {
     input.startsWith("ls")
   ) {
     manageNWDCommands(input, currentPath);
+    return;
+  }
+
+  if (
+    input.startsWith("cat") ||
+    input.startsWith("add") ||
+    input.startsWith("rn") ||
+    input.startsWith("cp") ||
+    input.startsWith("mv") ||
+    input.startsWith("rm")
+  ) {
+    manageOWFcommands(input);
     return;
   }
 };
