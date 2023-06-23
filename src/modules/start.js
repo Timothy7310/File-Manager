@@ -21,7 +21,7 @@ const start = () => {
     showCurrentPath(currentPath.getPath());
   } else {
     rl.question(
-      "Invalid input. I need to know your name. You can trust me :)\n\n",
+      "Invalid input🚨 I need to know your name. You can trust me :)\n\n",
       (answer) => {
         userName = answer;
         sayHello(userName);

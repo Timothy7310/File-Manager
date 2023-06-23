@@ -33,7 +33,7 @@ const manageOWFcommands = (input) => {
     return;
   }
 
-  printErrorMessage("Invalid input.");
+  printErrorMessage("Invalid input🚨");
 };
 
 export default manageOWFcommands;

@@ -26,7 +26,7 @@ const manageOSCommands = (input) => {
       break;
     default:
       printErrorMessage(
-        `Invalid input. Try use one of this arguments:\n--EOL, --cpus, --homedir, --username, --architecture`
+        `Invalid input🚨 Try use one of this arguments:\n--EOL, --cpus, --homedir, --username, --architecture`
       );
       break;
   }

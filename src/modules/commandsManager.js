@@ -1,6 +1,7 @@
 import manageOSCommands from "./operation-system/manageOSCommands.js";
 import manageNWDCommands from "./nwd/manageNWDCommands.js";
 import manageOWFcommands from "./operation-with-files/manageOWFcommands.js";
+import manageOtherOperation from "./other-operation/manageOtherOperation.js";
 
 const commandsManager = (input, readline, currentPath) => {
   if (input === ".exit") {
@@ -29,6 +30,15 @@ const commandsManager = (input, readline, currentPath) => {
     input.startsWith("rm")
   ) {
     manageOWFcommands(input);
+    return;
+  }
+
+  if (
+    input.startsWith("hash") ||
+    input.startsWith("compress") ||
+    input.startsWith("decompress")
+  ) {
+    manageOtherOperation(input);
     return;
   }
 };

@@ -18,7 +18,7 @@ const manageNWDCommands = (input) => {
     changeDir(currentPath, input);
     return;
   }
-  printErrorMessage("Invalid input.");
+  printErrorMessage("Invalid input🚨");
 };
 
 export default manageNWDCommands;
