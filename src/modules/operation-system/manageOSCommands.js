@@ -7,7 +7,7 @@ import showCPUArch from "./commands/showCPUArch.js";
 import printMessage from "../helpers/printMessage.js";
 import printErrorMessage from "../helpers/printErrorMessage.js";
 
-const manageOSComands = (input) => {
+const manageOSCommands = (input) => {
   switch (input) {
     case "os --EOL":
       printMessage(showEOL());
@@ -32,4 +32,4 @@ const manageOSComands = (input) => {
   }
 };
 
-export default manageOSComands;
+export default manageOSCommands;
