@@ -20,7 +20,10 @@ const compressFile = (input) => {
           ? `${fileToCompress.split("/").at(-1)}.br`
           : `${fileToCompress}.br`
       )
-    : path.join(currentPath.getPath(), compressedFile, fileToCompress);
+    : path.join(currentPath.getPath(), compressedFile, `${fileToCompress}.br`);
+
+
+    console.log(pathToCompressedFile);
 
   const compress = zlib.createBrotliCompress();
   const readStream = fs.createReadStream(pathToFileCompress, "utf8");

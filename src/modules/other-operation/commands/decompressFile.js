@@ -10,24 +10,30 @@ const decompressFile = (input) => {
     .map((x) => x.trim())
     .map((x) => x.split(" "));
 
-  const pathToFileCompressed = isRoot(compressedFile)
-    ? compressedFile
-    : path.join(currentPath.getPath(), compressedFile);
+  const pathToFileCompressed = isRoot(compressedFile) ?
+    compressedFile :
+    path.join(currentPath.getPath(), compressedFile);
 
-  const pathToDecompressFile = isRoot(fileToDecompress)
-    ? path.join(
-        fileToDecompress,
-        path
-          .basename(compressedFile)
-          .split(".")
-          .filter((x, _index, arr) => x !== arr.at(-1))
-          .join(".")
-      )
-    : path.join(currentPath.getPath(), fileToDecompress);
+  const pathToDecompressFile = isRoot(fileToDecompress) ?
+    path.join(
+      fileToDecompress,
+      path
+      .basename(compressedFile)
+      .split(".")
+      .filter((x, _index, arr) => x !== arr.at(-1))
+      .join(".")
+    ) :
+    path.join(currentPath.getPath(), fileToDecompress, path
+      .basename(compressedFile)
+      .split(".")
+      .filter((x, _index, arr) => x !== arr.at(-1))
+      .join("."));
+
+      console.log(pathToDecompressFile);
 
   const decompress = zlib.createBrotliDecompress();
-  const readStream = fs.createReadStream(pathToFileCompressed, "utf8");
-  const writeStream = fs.createWriteStream(pathToDecompressFile, "utf8");
+  const readStream = fs.createReadStream(pathToFileCompressed);
+  const writeStream = fs.createWriteStream(pathToDecompressFile);
 
   readStream.on("error", (err) => {
     console.log(`Invalid Input🚨 ${err.message}`);
