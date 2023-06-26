@@ -18,7 +18,9 @@ const manageOtherOperation = (input) => {
     return;
   }
 
-  printErrorMessage("Invalid input🚨");
+  printErrorMessage(
+    "Invalid input🙀. Try use one of this commands:\nhash, add, compress, decompress"
+  );
 };
 
 export default manageOtherOperation;

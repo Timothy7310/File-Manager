@@ -8,7 +8,7 @@ const createFile = (input) => {
 
   fs.writeFile(newFile, "", (err) => {
     if (err) {
-      console.log("Oops🙀 Some error, try use other command", "\n");
+      console.log(`Operation failed🚨, ${err.message}`, "\n");
     }
   });
 };

@@ -13,7 +13,7 @@ const renameFile = (input) => {
 
   fs.rename(oldPath, newPath, (err) => {
     if (err) {
-      console.log(`Invalid Input🚨. ${err.message}`, "\n");
+      console.log(`Operation failed🚨 ${err.message}`, "\n");
     }
   });
 };

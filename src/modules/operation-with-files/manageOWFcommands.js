@@ -33,7 +33,9 @@ const manageOWFcommands = (input) => {
     return;
   }
 
-  printErrorMessage("Invalid input🚨");
+  printErrorMessage(
+    "Invalid input🙀. Try use one of this commands:\ncat, add, rn, cp, mv, rm"
+  );
 };
 
 export default manageOWFcommands;

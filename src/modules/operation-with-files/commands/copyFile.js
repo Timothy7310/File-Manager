@@ -23,17 +23,17 @@ const copyFile = (input, options = { flag: "copy" }) => {
   const writeStream = fs.createWriteStream(pathToNewFile);
 
   readStream.on("error", (err) => {
-    console.log(`Invalid Input🚨: ${err.message}`, "\n");
+    console.log(`Operation failed🚨: ${err.message}`, "\n");
   });
   writeStream.on("error", (err) => {
-    console.log(`Invalid Input🚨: ${err.message}`, "\n");
+    console.log(`Operation failed🚨: ${err.message}`, "\n");
   });
 
   writeStream.on("finish", () => {
     if (options.flag === "move") {
       fs.rm(pathToFileCopy, (err) => {
         if (err) {
-          console.log(`Invalid Input🚨: ${err.message}`, "\n");
+          console.log(`Operation failed🚨: ${err.message}`, "\n");
         }
       });
     }

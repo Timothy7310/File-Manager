@@ -12,10 +12,7 @@ const readFile = (input) => {
 
   fs.access(pathToRead, (err) => {
     if (err) {
-      console.log(
-        `Invalid Input🚨 There is no file like this: ${pathToRead}`,
-        "\n"
-      );
+      console.log(`Operation failed🚨 ${err.message}`, "\n");
     } else {
       const stream = fs.createReadStream(pathToRead, "utf-8");
 
@@ -23,7 +20,7 @@ const readFile = (input) => {
         if (err.code === "EISDIR") {
           console.log("Dude, this is directory🤨 Try read some file", "\n");
         } else {
-          console.log("Invalid Input🚨", "\n");
+          console.log(`Operation failed🚨, ${err.message}`, "\n");
         }
       });
 

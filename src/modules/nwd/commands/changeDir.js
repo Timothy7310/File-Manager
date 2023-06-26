@@ -12,9 +12,7 @@ const changeDir = (currentPath, input) => {
 
   fs.access(newPath, (err) => {
     if (err) {
-      console.log(
-        `Invalid Input🚨 There is no directory like this: ${newPath}`
-      );
+      console.log(`Operation failed🚨 ${err.message}`, "\n");
     } else {
       currentPath.setPath(newPath);
       showCurrentPath(currentPath.getPath());

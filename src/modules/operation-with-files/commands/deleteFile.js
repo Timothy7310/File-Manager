@@ -8,7 +8,7 @@ const deleteFile = (input) => {
 
   fs.rm(pathToFileDelete, (err) => {
     if (err) {
-      console.log(`Invalid Input🚨 ${err.message}`, "\n");
+      console.log(`Operation failed🚨 ${err.message}`, "\n");
     }
   });
 };

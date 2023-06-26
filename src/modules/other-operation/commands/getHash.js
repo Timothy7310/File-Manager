@@ -15,7 +15,7 @@ const getHash = (input) => {
       if (stat.isFile()) {
         fs.readFile(pathToHashFile, "utf-8", (err, data) => {
           if (err) {
-            console.log(`Invalid Input🚨 ${err.message}`, "\n");
+            console.log(`Operation failed🚨 ${err.message}`, "\n");
           }
           console.log(
             crypto.createHash("sha256").update(data).digest("hex"),
@@ -24,12 +24,12 @@ const getHash = (input) => {
         });
       } else {
         console.log(
-          "Invalid Input🚨 This is directory. We need some file to get hash🥺",
+          "Operation failed🚨 This is directory. We need some file to get hash🥺",
           "\n"
         );
       }
     } else {
-      console.log(`Invalid Input🚨 ${err.message}`, "\n");
+      console.log(`Operation failed🚨 ${err.message}`, "\n");
     }
   });
 };

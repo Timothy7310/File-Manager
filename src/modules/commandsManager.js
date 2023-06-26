@@ -41,6 +41,8 @@ const commandsManager = (input, readline, currentPath) => {
     manageOtherOperation(input);
     return;
   }
+
+  console.log("Invalid Input🙀 There is no such command");
 };
 
 export default commandsManager;

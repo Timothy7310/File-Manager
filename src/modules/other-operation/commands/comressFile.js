@@ -22,18 +22,17 @@ const compressFile = (input) => {
       )
     : path.join(currentPath.getPath(), compressedFile, `${fileToCompress}.br`);
 
-
-    console.log(pathToCompressedFile);
+  console.log(pathToCompressedFile);
 
   const compress = zlib.createBrotliCompress();
   const readStream = fs.createReadStream(pathToFileCompress, "utf8");
   const writeStream = fs.createWriteStream(pathToCompressedFile, "utf8");
 
   readStream.on("error", (err) => {
-    console.log(`Invalid Input🚨 ${err.message}`);
+    console.log(`Operation failed🚨 ${err.message}`);
   });
   writeStream.on("error", (err) => {
-    console.log(`Invalid Input🚨 ${err.message}`);
+    console.log(`Operation failed🚨 ${err.message}`);
   });
 
   readStream.pipe(compress).pipe(writeStream);

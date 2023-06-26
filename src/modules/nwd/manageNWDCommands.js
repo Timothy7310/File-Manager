@@ -18,7 +18,9 @@ const manageNWDCommands = (input) => {
     changeDir(currentPath, input);
     return;
   }
-  printErrorMessage("Invalid input🚨");
+  printErrorMessage(
+    "Invalid input🙀. Try use one of this commands:\nup, ls, cd"
+  );
 };
 
 export default manageNWDCommands;
